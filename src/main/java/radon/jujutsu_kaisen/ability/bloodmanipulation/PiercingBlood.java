@@ -49,6 +49,7 @@ public class PiercingBlood extends Ability {
         return 10 * 20;
     }
 
+
     @Override
     public float getCost(LivingEntity owner) {
         return 100.0F;
