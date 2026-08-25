@@ -34,6 +34,7 @@ public enum CursedTechnique {
             JJKAbilities.TRANSFIGURED_SOUL_NORMAL.get(), JJKAbilities.TRANSFIGURED_SOUL_LARGE.get(), JJKAbilities.POLYMORPHIC_SOUl_ISOMER.get(), JJKAbilities.INSTANT_SPIRIT_BODY_OF_DISTORTED_KILLING.get()),
 
     RATIO(null, JJKAbilities.COLLAPSE.get(), JJKAbilities.RATIO_RULE.get(), JJKAbilities.BISECTION.get()),
+    BLOOD_MANIPULATION(JJKAbilities.PIERCING_BLOOD.get()),
 
     TEN_SHADOWS(JJKAbilities.CHIMERA_SHADOW_GARDEN.get(),
             JJKAbilities.SWITCH_MODE.get(),
@@ -51,7 +52,7 @@ public enum CursedTechnique {
     MYTHICAL_BEAST_AMBER(null,JJKAbilities.MYTHICAL_BEAST_AMBER.get(), JJKAbilities.EMF_BLAST.get(), JJKAbilities.ELECTRIC_BEAM.get() ),
     TECHNIQUELESS(null),
     PROJECTION_SORCERY(JJKAbilities.TIME_CELL_MOON_PALACE.get(), JJKAbilities.PROJECTION_SORCERY.get(), JJKAbilities.TWENTY_FOUR_FRAME_RULE.get(), JJKAbilities.AIR_FRAME.get());
-
+    
     private final @Nullable Ability domain;
     private final Ability[] abilities;
 
