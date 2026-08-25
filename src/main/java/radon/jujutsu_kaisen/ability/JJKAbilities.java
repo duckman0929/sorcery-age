@@ -274,7 +274,7 @@ public class JJKAbilities {
     public static RegistryObject<Ability> RATIO_RULE = ABILITIES.register("ratio_rule", RatioRule::new);
     public static RegistryObject<Ability> BISECTION = ABILITIES.register("bisection", Bisection::new);
     
-    public static RegistryObject<Ability> Piercing_Blood = ABILITIES.register("piercing_blood", PiercingBlood::new);
+    public static RegistryObject<Ability> PIERCING_BLOOD = ABILITIES.register("piercing_blood", PiercingBlood::new);
 
     public static String getName(Ability ability) {
         return getKey(ability).getPath();
