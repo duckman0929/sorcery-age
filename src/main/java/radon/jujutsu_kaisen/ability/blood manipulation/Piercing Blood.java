@@ -1,4 +1,4 @@
-package radon.jujutsu_kaisen.ability.ten_shadows.ability;
+package radon.jujutsu_kaisen.ability.blood manipulation;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.InteractionHand;
