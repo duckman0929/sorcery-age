@@ -24,6 +24,7 @@ import radon.jujutsu_kaisen.ability.ai.max_elephant.Water;
 import radon.jujutsu_kaisen.ability.ai.nue_totality.NueTotalityLightning;
 import radon.jujutsu_kaisen.ability.ai.rika.ShootPureLove;
 import radon.jujutsu_kaisen.ability.ai.scissor.Scissors;
+import radon.jujutsu_kaisen.ability.blood_manipulation.PiercingBlood;
 import radon.jujutsu_kaisen.ability.angel.AngelWings;
 import radon.jujutsu_kaisen.ability.angel.BarrierTravel;
 import radon.jujutsu_kaisen.ability.angel.JacobsLadder;
@@ -272,6 +273,8 @@ public class JJKAbilities {
     public static RegistryObject<Ability> COLLAPSE = ABILITIES.register("collapse", Collapse::new);
     public static RegistryObject<Ability> RATIO_RULE = ABILITIES.register("ratio_rule", RatioRule::new);
     public static RegistryObject<Ability> BISECTION = ABILITIES.register("bisection", Bisection::new);
+    
+    public static RegistryObject<Ability> Piercing_Blood = ABILITIES.register("piercing_blood", PiercingBlood::new);
 
     public static String getName(Ability ability) {
         return getKey(ability).getPath();
