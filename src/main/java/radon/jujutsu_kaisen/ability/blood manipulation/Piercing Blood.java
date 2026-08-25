@@ -9,12 +9,12 @@ import radon.jujutsu_kaisen.ability.base.Ability;
 import net.minecraft.world.damagesource.DamageSource;
 import radon.jujutsu_kaisen.damage.JJKDamageSources;
 import radon.jujutsu_kaisen.ability.JJKAbilities;
-import radon.jujutsu_kaisen.capability.data.ten_shadows.ITenShadowsData;
-import radon.jujutsu_kaisen.capability.data.ten_shadows.TenShadowsDataHandler;
-import radon.jujutsu_kaisen.capability.data.ten_shadows.TenShadowsMode;
 import radon.jujutsu_kaisen.entity.JJKEntities;
 import radon.jujutsu_kaisen.entity.effect.PiercingWaterEntity;
 import radon.jujutsu_kaisen.util.HelperMethods;
+import radon.jujutsu_kaisen.capability.data.sorcerer.CursedTechnique;
+import radon.jujutsu_kaisen.capability.data.sorcerer.ISorcererData;
+import radon.jujutsu_kaisen.capability.data.sorcerer.SorcererDataHandler;
 
 
 public class PiercingBlood extends Ability {
