@@ -84,6 +84,7 @@ import radon.jujutsu_kaisen.network.packet.s2c.SyncSorcererDataS2CPacket;
 import radon.jujutsu_kaisen.util.RotationUtil;
 import radon.jujutsu_kaisen.ability.Star_rage.OVERDRIVE;
 import radon.jujutsu_kaisen.ability.Star_rage.STARRAGE;
+import radon.jujutsu_kaisen.ability.blood_manipulation.PiercingBlood;
 
 import javax.annotation.Nullable;
 import java.util.*;
