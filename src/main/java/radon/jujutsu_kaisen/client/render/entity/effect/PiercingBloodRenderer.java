@@ -18,9 +18,9 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import radon.jujutsu_kaisen.JujutsuKaisen;
-import radon.jujutsu_kaisen.entity.effect.PiercingWaterEntity;
+import radon.jujutsu_kaisen.entity.effect.PiercingBloodEntity;
 
-public class PiercingWaterRenderer extends EntityRenderer<PiercingWaterEntity> {
+public class PiercingBloodRenderer extends EntityRenderer<PiercingBloodEntity> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(JujutsuKaisen.MOD_ID, "textures/entity/piercing_water.png");
     private static final int TEXTURE_WIDTH = 16;
     private static final int TEXTURE_HEIGHT = 512;
@@ -28,17 +28,17 @@ public class PiercingWaterRenderer extends EntityRenderer<PiercingWaterEntity> {
     private static final float ALPHA = 0.5F;
     private boolean clearerView = false;
 
-    public PiercingWaterRenderer(EntityRendererProvider.Context pContext) {
+    public PiercingBloodRenderer(EntityRendererProvider.Context pContext) {
         super(pContext);
     }
 
     @Override
-    public @NotNull ResourceLocation getTextureLocation(@NotNull PiercingWaterEntity pEntity) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull PiercingBloodEntity pEntity) {
         return TEXTURE;
     }
 
     @Override
-    public void render(PiercingWaterEntity pEntity, float pEntityYaw, float pPartialTick, @NotNull PoseStack pPoseStack, @NotNull MultiBufferSource pBuffer, int pPackedLight) {
+    public void render(PiercingBloodEntity pEntity, float pEntityYaw, float pPartialTick, @NotNull PoseStack pPoseStack, @NotNull MultiBufferSource pBuffer, int pPackedLight) {
         Entity owner = pEntity.getOwner();
         this.clearerView = owner instanceof Player && Minecraft.getInstance().player == owner &&
                 Minecraft.getInstance().options.getCameraType() == CameraType.FIRST_PERSON;
