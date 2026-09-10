@@ -36,6 +36,14 @@ public interface ISorcererData {
 
     void setCursedEnergyColor(int color);
 
+    float getmaximumstar_rage_output();
+
+    void increasestar_rage_output();
+
+    void decreasestar_rage_output();
+    
+    void maximumstar_rage_output();
+
     float getMaximumOutput();
 
     void increaseOutput();
@@ -133,6 +141,8 @@ public interface ISorcererData {
     //void unlockDomain();
 
     float getOutput();
+
+    float getstar_rage_output();
 
     float getAbilityPower();
 

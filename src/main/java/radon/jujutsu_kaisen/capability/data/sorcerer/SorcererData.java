@@ -4,6 +4,8 @@ import com.mojang.authlib.GameProfile;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.nbt.*;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -106,6 +108,7 @@ public class SorcererData implements ISorcererData {
 
     private float experience;
     private float output;
+    private float star_rage_output;
 
     private float energy;
     private int lives;
@@ -191,6 +194,7 @@ public class SorcererData implements ISorcererData {
 
 
         this.output = 1.0F;
+        this.star_rage_output = 0.0F;
 
         this.revivable = true;
         this.lives = ConfigHolder.SERVER.livesconfig.get();
@@ -411,6 +415,7 @@ public class SorcererData implements ISorcererData {
             this.brainDamage--;
 
             this.output = this.getMaximumOutput();
+            this.output =this.getmaximumstar_rage_output();
         }
     }
 
@@ -610,6 +615,7 @@ public class SorcererData implements ISorcererData {
         if (this.silenced > 0) {
             this.silenced--;
         }
+        
 
         this.energy = Math.min(this.energy + (ConfigHolder.SERVER.cursedEnergyRegenerationAmount.get().floatValue() * ((this.owner instanceof Player player && ConfigHolder.SERVER.foodCERegen.get()) ? (player.getFoodData().getFoodLevel() / 20.0F) : 1.0F)), this.getMaxEnergy());
 
@@ -738,7 +744,26 @@ public class SorcererData implements ISorcererData {
     public boolean isThroatDamaged() {
         return this.throatDamage > 0;
     }
-
+    @Override
+    public float getmaximumstar_rage_output() {
+        float star_rage_output = 1.0F;
+        if (this.toggled.contains(JJKAbilities.OVERDRIVE.get() )) { 
+            star_rage_output = 5.0F;
+                }
+        return star_rage_output;
+    }
+    @Override
+    public void increasestar_rage_output() {
+        this.star_rage_output = Math.min(this.getmaximumstar_rage_output(), this.star_rage_output + 0.1F);
+    }
+        @Override
+    public void decreasestar_rage_output() {
+        this.star_rage_output = Math.max(0.1F, this.star_rage_output - 0.1F);
+    }
+    @Override
+        public void maximumstar_rage_output() {
+        this.star_rage_output = this.getmaximumstar_rage_output();
+    }
     @Override
     public float getMaximumOutput() {
         float output = 1.0F;
@@ -1082,6 +1107,10 @@ public class SorcererData implements ISorcererData {
     @Override
     public float getOutput() {
         return Math.min(this.getMaximumOutput(), this.output);
+    }
+        @Override
+    public float getstar_rage_output() {
+        return Math.min(this.getmaximumstar_rage_output(), this.star_rage_output);
     }
 
     @Override
@@ -1530,6 +1559,15 @@ public class SorcererData implements ISorcererData {
 
     @Override
     public void addEnergy(float amount) {
+        Vec3 velocity = entity.getDeltaMovement();
+        double xSpeed = movement.x();
+        double ySpeed = movement.y();
+        double zSpeed = movement.z();
+        float horizontalSpeed = Math.sqrt(xSpeed * xSpeed + zSpeed * zSpeed + ySpeed * ySpeed);
+        if (this.traits.contains(Trait.INNER_PEACE) && horizontalSpeed = 0) {
+            this.energy = Math.min(this.getMaxEnergy(), this.energy + amount * 1.3);
+        this.sync();
+        }
         this.energy = Math.min(this.getMaxEnergy(), this.energy + amount);
         this.sync();
     }

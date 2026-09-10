@@ -1,4 +1,4 @@
-package radon.jujutsu_kaisen.ability.angel;
+package radon.jujutsu_kaisen.ability.Star_rage;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -18,15 +18,13 @@ import radon.jujutsu_kaisen.ability.base.Ability;
 import radon.jujutsu_kaisen.capability.data.sorcerer.CursedTechnique;
 import radon.jujutsu_kaisen.capability.data.sorcerer.ISorcererData;
 import radon.jujutsu_kaisen.capability.data.sorcerer.SorcererDataHandler;
-import radon.jujutsu_kaisen.capability.data.sorcerer.Trait;
 import radon.jujutsu_kaisen.config.ConfigHolder;
 import radon.jujutsu_kaisen.damage.JJKDamageSources;
-import radon.jujutsu_kaisen.entity.base.DomainExpansionEntity;
 import radon.jujutsu_kaisen.network.PacketHandler;
 import radon.jujutsu_kaisen.network.packet.s2c.SyncSorcererDataS2CPacket;
 import radon.jujutsu_kaisen.util.HelperMethods;
 
-public class BarrierTravel extends Ability implements Ability.IToggled {
+public class STARRAGE extends Ability implements Ability.IToggled {
     @Override
     public boolean isScalable(LivingEntity owner) {
         return false;
@@ -50,12 +48,12 @@ public class BarrierTravel extends Ability implements Ability.IToggled {
     @Override
     public boolean isValid(LivingEntity owner) {
         ISorcererData cap = owner.getCapability(SorcererDataHandler.INSTANCE).resolve().orElseThrow();
-        return cap.getTechnique() == CursedTechnique.ANGEL || cap.hasTrait(Trait.HEAVENLY_RESTRICTION);
+        return cap.getTechnique() == CursedTechnique.STAR_RAGE && super.isValid(owner);
     }
 
     @Override
     public float getCost(LivingEntity owner) {
-        return 0;
+        return 1.0F;
     }
 
     @Override
@@ -66,10 +64,6 @@ public class BarrierTravel extends Ability implements Ability.IToggled {
     @Override
     public void onDisabled(LivingEntity owner) {
 
-    }
-        @Override
-    public boolean isTechnique() {
-        return false;
     }
 
     @Override

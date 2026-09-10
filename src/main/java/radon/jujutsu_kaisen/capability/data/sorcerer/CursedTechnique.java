@@ -13,7 +13,7 @@ public enum CursedTechnique {
     SHOCKWAVE(null, JJKAbilities.SHOCKWAVE.get()),
     SKY_STRIKE(null, JJKAbilities.SKY_STRIKE.get()),
     BRAIN_TRANSPLANT(null, JJKAbilities.BODY_STEAL.get()),
-    ANGEL(null, JJKAbilities.ANGEL_WINGS.get(), JJKAbilities.JACOBS_LADDER.get(), JJKAbilities.MAXIMUM_OUTPUT_JACOBS_LADDER.get(), JJKAbilities.BARRIER_TRAVEL.get()),
+    ANGEL( JJKAbilities.GODSWILL.get(), JJKAbilities.ANGEL_WINGS.get(), JJKAbilities.JACOBS_LADDER.get(), JJKAbilities.MAXIMUM_OUTPUT_JACOBS_LADDER.get(), JJKAbilities.BARRIER_TRAVEL.get()),
     CURSE_MANIPULATION(null, JJKAbilities.CURSE_ABSORPTION.get(), JJKAbilities.RELEASE_CURSE.get(), JJKAbilities.RELEASE_CURSES.get(), JJKAbilities.SUMMON_ALL.get(), JJKAbilities.ENHANCE_CURSE.get(),
             JJKAbilities.MAXIMUM_UZUMAKI.get(), JJKAbilities.MINI_UZUMAKI.get(), JJKAbilities.WORM_CURSE_GRAB.get(),JJKAbilities.FISH_SWARM.get()),
     LIMITLESS(JJKAbilities.UNLIMITED_VOID.get(), JJKAbilities.INFINITY.get(), JJKAbilities.RED.get(), JJKAbilities.BLUE_STILL.get(),
@@ -51,6 +51,8 @@ public enum CursedTechnique {
     BOOGIE_WOOGIE(null, JJKAbilities.SWAP_SELF.get(), JJKAbilities.SWAP_OTHERS.get(), JJKAbilities.FEINT.get(), JJKAbilities.CE_THROW.get(), JJKAbilities.ITEM_SWAP.get(), JJKAbilities.SHUFFLE.get()),
     MYTHICAL_BEAST_AMBER(null,JJKAbilities.MYTHICAL_BEAST_AMBER.get(), JJKAbilities.EMF_BLAST.get(), JJKAbilities.ELECTRIC_BEAM.get() ),
     TECHNIQUELESS(null),
+    MIRACLES(JJKAbilities.MIRACLE.get()),
+    STAR_RAGE(JJKAbilities.OVERDRIVE.get(),JJKAbilities.STARRAGE.get()),
     PROJECTION_SORCERY(JJKAbilities.TIME_CELL_MOON_PALACE.get(), JJKAbilities.PROJECTION_SORCERY.get(), JJKAbilities.TWENTY_FOUR_FRAME_RULE.get(), JJKAbilities.AIR_FRAME.get());
     
     private final @Nullable Ability domain;

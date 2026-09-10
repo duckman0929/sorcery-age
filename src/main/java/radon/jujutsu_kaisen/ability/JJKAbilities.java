@@ -29,6 +29,7 @@ import radon.jujutsu_kaisen.ability.angel.AngelWings;
 import radon.jujutsu_kaisen.ability.angel.BarrierTravel;
 import radon.jujutsu_kaisen.ability.angel.JacobsLadder;
 import radon.jujutsu_kaisen.ability.angel.MaximumOutputJacobsLadder;
+import radon.jujutsu_kaisen.ability.angel.GodsWill;
 import radon.jujutsu_kaisen.ability.barrier.BarrierSizeConfig;
 import radon.jujutsu_kaisen.ability.barrier.ShellBalanceConfig;
 import radon.jujutsu_kaisen.ability.barrier.SureHitConfig;
@@ -48,6 +49,7 @@ import radon.jujutsu_kaisen.ability.disaster_tides.*;
 import radon.jujutsu_kaisen.ability.shrine.*;
 import radon.jujutsu_kaisen.ability.limitless.*;
 import radon.jujutsu_kaisen.ability.misc.*;
+import radon.jujutsu_kaisen.ability.miracles.MIRACLE;
 import radon.jujutsu_kaisen.ability.misc.lightning.Discharge;
 import radon.jujutsu_kaisen.ability.misc.lightning.Lightning;
 import radon.jujutsu_kaisen.ability.projection_sorcery.AirFrame;
@@ -80,6 +82,8 @@ import radon.jujutsu_kaisen.entity.curse.JogoatEntity;
 import radon.jujutsu_kaisen.network.PacketHandler;
 import radon.jujutsu_kaisen.network.packet.s2c.SyncSorcererDataS2CPacket;
 import radon.jujutsu_kaisen.util.RotationUtil;
+import radon.jujutsu_kaisen.ability.Star_rage.OVERDRIVE;
+import radon.jujutsu_kaisen.ability.Star_rage.STARRAGE;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -101,6 +105,7 @@ public class JJKAbilities {
     public static RegistryObject<Ability> JACOBS_LADDER = ABILITIES.register("jacobs_ladder", JacobsLadder::new);
     public static RegistryObject<Ability> ANGEL_WINGS = ABILITIES.register("angel_wings",  AngelWings::new);
     public static RegistryObject<Ability> BARRIER_TRAVEL = ABILITIES.register("barrier_travel", BarrierTravel::new);
+    public static RegistryObject<Ability> GODSWILL = ABILITIES.register("gods_will", GodsWill::new);
     
     public static RegistryObject<Ability> QUICKDASH = ABILITIES.register("quickdash", QuickDash::new);
     public static RegistryObject<Ability> DASH = ABILITIES.register("dash", Dash::new);
@@ -275,7 +280,11 @@ public class JJKAbilities {
     public static RegistryObject<Ability> BISECTION = ABILITIES.register("bisection", Bisection::new);
     
     public static RegistryObject<Ability> PIERCING_BLOOD = ABILITIES.register("piercing_blood", PiercingBlood::new);
+   
+    public static RegistryObject<Ability> MIRACLE = ABILITIES.register("miracle", MIRACLE::new);
 
+    public static RegistryObject<Ability> OVERDRIVE = ABILITIES.register("overdrive", OVERDRIVE::new);
+    public static RegistryObject<Ability> STARRAGE = ABILITIES.register("starrage", STARRAGE::new);
     public static String getName(Ability ability) {
         return getKey(ability).getPath();
     }
